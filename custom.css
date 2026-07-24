@@ -201,3 +201,31 @@
   color: #0f766e;
   height: 3px;
 }
+
+/* Hyperlinks & Citation Links */
+.reveal a {
+  color: #0284c7;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.reveal a:hover {
+  color: #0f766e;
+  text-decoration-color: #0f766e;
+}
+
+.reveal table a, .matrix-table a {
+  color: #0369a1 !important;
+  font-weight: 600 !important;
+  text-decoration: underline !important;
+  text-decoration-color: #7dd3fc !important;
+  text-underline-offset: 2px !important;
+}
+
+.reveal table a:hover, .matrix-table a:hover {
+  color: #0f766e !important;
+  text-decoration-color: #0f766e !important;
+}
+

@@ -46,7 +46,7 @@ format:
 ::: {.callout-tip icon=false}
 ### The Designer Ecosystem Approach
 
-- **Acknowledge Human Control:** "We must embrace *Designer Ecosystems*—admitting that humans control these systems and explicitly designing them for specific ecological goals, rather than hoping passive restoration fixes itself" (*Ross et al. 2015, Ann. Rev. Environ. Resour.*).
+- **Acknowledge Human Control:** "We must embrace *Designer Ecosystems*—admitting that humans control these systems and explicitly designing them for specific ecological goals, rather than hoping passive restoration fixes itself" ([Ross et al. 2015, Ann. Rev. Environ. Resour.](https://doi.org/10.1146/annurev-environ-102014-021417)).
 - **Target Real Levers:** Direct investment toward explicit functional outcomes: flow preservation, riparian shading, and minimizing diversion harm.
 - **Continuous Sensor Arrays:** Real-time sensor monitoring ($\text{Temp, DO, Turbidity, Chl-a}$) provides design feedback.
 :::
@@ -98,12 +98,12 @@ matrix_data <- data.frame(
     "Requires huge land footprint; high evaporative loss."
   ),
   `Primary Citations` = c(
-    "Bednarek (2001)<br/>Doyle et al. (2005)<br/>Bernhardt & Palmer (2011)",
-    "Poole & Berman (2001)<br/>Caissie (2006)<br/>Kalny et al. (2017)",
-    "Opperman et al. (2010)<br/>Noe et al. (2013)<br/>Kaushal et al. (2008)",
-    "Palmer et al. (2005, 2010)<br/>Bernhardt et al. (2005)<br/>Filoso & Palmer (2011)",
-    "Weber et al. (2017)<br/>Lautz et al. (2013)<br/>Majerova et al. (2015)",
-    "Cluer & Thorne (2014)<br/>Powers et al. (2019)<br/>Kondolf et al. (2006)"
+    "<a href='https://doi.org/10.1007/s002670010189' target='_blank'>Bednarek (2001)</a><br/><a href='https://doi.org/10.1016/j.geomorph.2005.04.011' target='_blank'>Doyle et al. (2005)</a><br/><a href='https://doi.org/10.1016/B978-0-12-819166-8.00101-8' target='_blank'>Duda & Bellmore (2021)</a>",
+    "<a href='https://doi.org/10.1007/s002670010188' target='_blank'>Poole & Berman (2001)</a><br/><a href='https://doi.org/10.1111/j.1365-2427.2006.01597.x' target='_blank'>Caissie (2006)</a><br/><a href='https://doi.org/10.1002/esp.5372' target='_blank'>Fogel et al. (2022)</a>",
+    "<a href='https://doi.org/10.1111/j.1752-1688.2010.00426.x' target='_blank'>Opperman et al. (2010)</a><br/><a href='https://doi.org/10.1890/07-1159.1' target='_blank'>Kaushal et al. (2008)</a><br/><a href='https://doi.org/10.1002/jeq2.20047' target='_blank'>Lammers et al. (2020)</a>",
+    "<a href='https://doi.org/10.1111/j.1365-2664.2005.01004.x' target='_blank'>Palmer et al. (2005)</a>, <a href='https://doi.org/10.1111/j.1461-0248.2009.01415.x' target='_blank'>(2010)</a><br/><a href='https://doi.org/10.1890/10-0854.1' target='_blank'>Filoso & Palmer (2011)</a><br/><a href='https://doi.org/10.1139/cjfas-2019-0327' target='_blank'>Foote et al. (2020)</a>",
+    "<a href='https://doi.org/10.1371/journal.pone.0176313' target='_blank'>Weber et al. (2017)</a><br/><a href='https://doi.org/10.5194/hess-19-3541-2015' target='_blank'>Majerova et al. (2015)</a><br/><a href='https://doi.org/10.1093/biosci/biaa165' target='_blank'>Nash et al. (2021)</a>",
+    "<a href='https://doi.org/10.1002/rra.2631' target='_blank'>Cluer & Thorne (2014)</a><br/><a href='https://doi.org/10.1002/rra.3378' target='_blank'>Powers et al. (2019)</a><br/><a href='https://doi.org/10.1093/biosci/biab065' target='_blank'>Ciotti et al. (2021)</a>"
   ),
   check.names = FALSE
 )
@@ -127,7 +127,7 @@ matrix_data %>%
 - Interventions should be moderate, monitored, and iterated based on success
 
 - Design goals, empirical outcomes, must be stated before restoration and ROI 
-empirically measured/modelled (*Ross et al. 2015, Ann. Rev. Environ. Resour.*).
+empirically measured/modelled ([Ross et al. 2015, Ann. Rev. Environ. Resour.](https://doi.org/10.1146/annurev-environ-102014-021417)).
 
 ---
 
@@ -185,7 +185,7 @@ empirically measured/modelled (*Ross et al. 2015, Ann. Rev. Environ. Resour.*).
    Conduct an immediate spatial gap analysis overlaying proposed settlement restoration reaches against active sensor coverage along the Munroe-to-South-Platte corridor.
 
 2. **Monitoring Standard**  
-   Adopt the 3–5% Sentinel Rule in all future RFP guidelines to mandate continuous telemetry data and intentional design feedback (*Ross et al. 2015*).
+   Adopt the 3–5% Sentinel Rule in all future RFP guidelines to mandate continuous telemetry data and intentional design feedback ([Ross et al. 2015](https://doi.org/10.1146/annurev-environ-102014-021417)).
 
 3. **Open Data Dashboard**  
    Establish an open-access public hydroinformatics dashboard connecting settlement projects to live river health metrics.
