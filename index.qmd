@@ -21,18 +21,17 @@ format:
     embed-resources: true
 ---
 
-## Restoration Without Monitoring is Greenwashing
+## From Passive "Restoration" to Intentional Ecosystem Design
 
 ::: {.columns}
 ::: {.column width="50%"}
 
 ::: {.callout-warning icon=false}
-### The Unmonitored Pitfall
+### The Passive "Restoration" Pitfall
 
-- **Millions Spent Annually:** Instream structural fixes (BDAs, boulder clusters, Stage 0 channel reshapes) are heavily promoted across snowmelt gravel rivers.
-- **Flawed Metrics:** Success is routinely measured by *inputs* ("dollars spent") and *outputs* ("feet of bank shaped on Day 1").
-- **5-Year Performance Gap:** Without continuous monitoring, structural interventions fail to demonstrate reach-scale water quality or ecosystem gains.
-- **Settlement Risk:** Investing in unmonitored structural reconfigurations risks capital loss without verifiable downstream benefits.
+- **The Myth of Self-Assembly:** Traditional stream restoration assumes dropping in structural channel tweaks (BDAs, boulder clusters, Stage 0) will magically cause the river to "restore itself."
+- **Flawed Metrics:** Success is measured by *inputs* ("dollars spent") and *outputs* ("feet of bank shaped on Day 1") rather than functional performance.
+- **Unmonitored Greenwashing:** In a heavily managed snowmelt river, unmonitored structural fixes fail to deliver downstream thermal or water quality gains.
 :::
 
 :::
@@ -40,12 +39,11 @@ format:
 ::: {.column width="50%"}
 
 ::: {.callout-tip icon=false}
-### The Empirical & Design Alternative
+### The Designer Ecosystem Approach
 
-- **Design Failures vs Science Failures:** "Many failures in applied ecology and restoration are design failures, not failures in science" (*Ross et al. 2015, Ann. Rev. Environ. Resour.*).
-- **Continuous Sensor Arrays:** Automated real-time sensors measuring Water Temperature, Dissolved Oxygen, Turbidity, and Nitrate ($\text{NO}_3^-$).
-- **Iterative Feedback Loops:** Continuous monitoring provides the design feedback required to verify real ecosystem performance.
-- **Guiding Rule:** Continuous empirical data shields committee capital from greenwashing.
+- **Acknowledge Human Control:** "We must embrace *Designer Ecosystems*—admitting that humans control these systems and explicitly designing them for specific ecological goals, rather than hoping passive restoration fixes itself" (*Ross et al. 2015, Ann. Rev. Environ. Resour.*).
+- **Target Real Levers:** Direct investment toward explicit functional outcomes: flow preservation, riparian shading, and diversion connectivity.
+- **Continuous Sensor Arrays:** Real-time sensor monitoring ($\text{Temp, DO, Turbidity, NO}_3^-$) provides unassailable design feedback.
 :::
 
 :::
@@ -120,6 +118,9 @@ matrix_data %>%
   scroll_box(height = "410px", width = "100%")
 ```
 
+::: {.callout-note icon=false style="margin-top: 10px;"}
+**Ecosystem Design Principle:** Rather than assuming passive channel form will fix itself, intentional ecosystem design targets direct physical levers (flow preservation, thermal shading, barrier retrofits) with continuous monitoring feedback (*Ross et al. 2015, Ann. Rev. Environ. Resour.*).
+:::
 
 ---
 
@@ -133,10 +134,10 @@ matrix_data %>%
 
 Institute a mandatory policy requiring every funded capital project to dedicate **3% to 5% of its total budget** to automated continuous sensor monitoring.
 
-- **Design Feedback Loop:** Implements the iterative ecological design framework outlined in *Ross et al. (2015)* to evaluate functional outcomes.
+- **Design Feedback Loop:** Operationalizes the *Designer Ecosystems* framework (*Ross et al. 2015*) by measuring explicit performance goals.
 - **Pre- & Post-Implementation:** 12-month pre-project baseline and 3-year post-project continuous tracking.
-- **Continuous Telemetry:** Automated stations deployed immediately upstream & downstream of project reaches.
-- **Beyond Grab Samples:** Eliminates reliance on monthly grab samples that miss peak loading events.
+- **Continuous Telemetry:** Automated stations deployed upstream & downstream of project reaches.
+- **Beyond Grab Samples:** Replaces monthly manual grab samples that miss 90%+ of runoff and thermal events.
 :::
 
 :::
@@ -147,7 +148,7 @@ Institute a mandatory policy requiring every funded capital project to dedicate 
 ### Fiduciary Protection for Committee
 
 1. **Unassailable Accountability:** Empirical proof of performance demonstrating ROI to stakeholders and regulators.
-2. **Early Risk Mitigation:** Identifies underperforming or failing structural interventions before capital is wasted.
+2. **Early Risk Mitigation:** Identifies underperforming or failing interventions early so management can adapt.
 3. **Shield Against Greenwashing:** Defends committee funding choices with open, real-time science-backed data.
 :::
 
@@ -165,7 +166,7 @@ Institute a mandatory policy requiring every funded capital project to dedicate 
 1. Incorporate Monitoring Mindfully?
 :::
 ::: {.qa-body}
-Enforce the **3% Sentinel Rule** (*Ross et al. 2015*). Mandate 3–5% budget allocation for automated continuous sensors (Temp, DO, $\text{NO}_3^-$, Turbidity) over sparse monthly grab samples.
+Enforce the **3% Sentinel Rule** (*Ross et al. 2015*). Mandate 3–5% budget allocation for automated continuous sensors (Temp, DO, $\text{NO}_3^-$, Turbidity) to provide design feedback on performance.
 :::
 :::
 
@@ -174,7 +175,7 @@ Enforce the **3% Sentinel Rule** (*Ross et al. 2015*). Mandate 3–5% budget all
 2. Investment Dollars Strategy?
 :::
 ::: {.qa-body}
-Prioritize **low-maintenance, permanent returns** (flow preservation, canopy shading, diversion retrofits) over high-maintenance structural channel fixes.
+Embrace **Intentional Ecosystem Design**: Invest in permanent functional levers (flow preservation, canopy shading, diversion retrofits) rather than passive channel structural fixes.
 :::
 :::
 
@@ -183,7 +184,7 @@ Prioritize **low-maintenance, permanent returns** (flow preservation, canopy sha
 3. Prioritizing 5 Criteria?
 :::
 ::: {.qa-body}
-Focus on **Water Flows & Aquatic Habitat via Barrier Removal**. Eliminating diversion barriers between Munroe Canal & South Platte solves passage, thermal & habitat bottlenecks together.
+Focus on **Water Flows & Aquatic Habitat via Diversion Retrofits**. Engineered fish passage & bypass flow structures between Munroe Canal & South Platte solve passage, thermal & habitat constraints together.
 :::
 :::
 
@@ -192,7 +193,7 @@ Focus on **Water Flows & Aquatic Habitat via Barrier Removal**. Eliminating dive
 4. Best Projects for Flow Regime?
 :::
 ::: {.qa-body}
-**Diversion consolidation, seasonal water-sharing leases, and automated bypass gates**. Physical channel tweaks cannot compensate for missing late-summer water.
+**Active Hydrograph Management**: Diversion consolidation, seasonal water-sharing leases, and automated bypass gates. Channel tweaks cannot replace missing summer water.
 :::
 :::
 
@@ -210,7 +211,7 @@ Focus on **Water Flows & Aquatic Habitat via Barrier Removal**. Eliminating dive
 6. Key Stakeholders to Engage?
 :::
 ::: {.qa-body}
-**Ditch Companies & Open Hydroinformatics Groups**. Engage irrigation ditch companies (for flow consolidation opportunities) and independent open-data hydroinformatics teams.
+**Ditch Companies & Open Hydroinformatics Groups**. Collaborate with irrigation ditch companies to manage designer flow regimes and open-data experts for real-time tracking.
 :::
 :::
 
@@ -240,7 +241,7 @@ Conduct an immediate spatial gap analysis overlaying proposed settlement restora
 
 ### Monitoring Standard
 
-Adopt the 3–5% Sentinel Rule in all future RFP and grant guidelines to mandate continuous pre- and post-construction telemetry data (*Ross et al. 2015*).
+Adopt the 3–5% Sentinel Rule in all future RFP guidelines to mandate continuous telemetry data and intentional design feedback (*Ross et al. 2015*).
 :::
 
 :::
@@ -259,5 +260,5 @@ Establish an open-access public hydroinformatics dashboard connecting settlement
 :::
 
 ::: {.callout-tip icon=false style="text-align:center; margin-top:20px;"}
-**Summary:** Protecting the Cache la Poudre River requires prioritizing flow, thermal shading, and longitudinal connectivity—verified continuously with real-time empirical data.
+**Summary:** Protecting the Cache la Poudre River requires acknowledging human control, intentionally designing for flow, thermal shading, and connectivity—verified continuously with real-time empirical data.
 :::
