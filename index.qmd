@@ -8,7 +8,8 @@ format:
     css: custom.css
     width: 1280
     height: 720
-    margin: 0.06
+    margin: 0.05
+    navigation-mode: linear
     controls: true
     controls-layout: bottom-right
     progress: true
@@ -30,38 +31,24 @@ format:
 
 - I live by the CLP and go there nearly every day
 
+---
 
 ## From Passive "Restoration" to Intentional Ecosystem Design
 
-::: {.columns}
-::: {.column width="50%"}
-
 ::: {.callout-warning icon=false}
-
 ### The Passive "Restoration" Pitfall
 
-- **The Myth of Self-Assembly:** Traditional stream restoration assumes dropping in structural channel tweaks (BDAs, boulder clusters, Stage 0) will  cause the river to "restore itself."
-
+- **The Myth of Self-Assembly:** Traditional stream restoration assumes dropping in structural channel tweaks (BDAs, boulder clusters, Stage 0) will cause the river to "restore itself."
 - **Flawed Metrics:** Success is measured by *inputs* ("dollars spent") and *outputs* ("feet of bank shaped on Day 1") rather than functional performance.
-
 - **Risk of Greenwashing:** Unmonitored structural fixes fail to deliver downstream thermal or water quality gains.
 :::
-
-:::
-
-::: {.column width="50%"}
 
 ::: {.callout-tip icon=false}
 ### The Designer Ecosystem Approach
 
 - **Acknowledge Human Control:** "We must embrace *Designer Ecosystems*—admitting that humans control these systems and explicitly designing them for specific ecological goals, rather than hoping passive restoration fixes itself" (*Ross et al. 2015, Ann. Rev. Environ. Resour.*).
-
 - **Target Real Levers:** Direct investment toward explicit functional outcomes: flow preservation, riparian shading, and minimizing diversion harm.
-
-- **Continuous Sensor Arrays:** Real-time sensor monitoring ($\text{Temp, DO, Turbidity, Chl-a}$) provides  design feedback.
-:::
-
-:::
+- **Continuous Sensor Arrays:** Real-time sensor monitoring ($\text{Temp, DO, Turbidity, Chl-a}$) provides design feedback.
 :::
 
 ---
@@ -127,10 +114,8 @@ matrix_data %>%
     bootstrap_options = c("striped", "hover", "condensed"),
     full_width = TRUE,
     position = "center",
-    font_size = 13
-  ) %>%
-  row_spec(0, background = "#0f766e", color = "white", bold = TRUE) %>%
-  scroll_box(height = "410px", width = "100%")
+    font_size = 9
+  )
 ```
 
 ---
@@ -141,151 +126,70 @@ matrix_data %>%
 
 - Interventions should be moderate, monitored, and iterated based on success
 
-- Design goals, empirical outcoomes, must be stated before restoration and ROI 
+- Design goals, empirical outcomes, must be stated before restoration and ROI 
 empirically measured/modelled (*Ross et al. 2015, Ann. Rev. Environ. Resour.*).
-
 
 ---
 
-## Mindful Stewardship & Risk Mitigation ($100M Settlement)
+## Unique Things Possible Here ($100M Settlement)
 
-::: {.columns}
-::: {.column width="50%"}
-
-::: {.ross-card}
-
-#### Unique Things Possible here
-
-
-- **Design Feedback Loop:** Operationalizes the *Designer Ecosystems* framework by measuring explicit performance goals. Tie money to emprical evidence of project success
+- **Design Feedback Loop:** Operationalizes the *Designer Ecosystems* framework by measuring explicit performance goals. Tie money to empirical evidence of project success.
 
 - **Pre- & Post-Implementation:** 12-month pre-project baseline and 3-year post-project continuous tracking.
 
 - **Beyond Grab Samples:** Replaces monthly manual grab samples that miss 90%+ of runoff and thermal events.
 
-- **Real Restoration** Build a strong evidence-based bank of studies/interventions that demonstrate ROI for restoration projects nationwide. 
-
-:::
-
-:::
-
-::: {.column width="50%"}
-
-::: {.ross-card}
-#### Values for CLP community
-
-1. **Accountability:** Empirical proof of performance demonstrating ROI to stakeholders and regulators.
-2. **Early Risk Mitigation:** Identifies underperforming or failing interventions early so management can adapt.
-3. **Shield Against Greenwashing:** Defends committee funding choices with open, real-time science-backed data.
-:::
-
-:::
-:::
+- **Real Restoration:** Build a strong evidence-based bank of studies/interventions that demonstrate ROI for restoration projects nationwide.
 
 ---
 
-## Direct Answers to Committee Questions
+## Values for CLP Community
 
-::: {.qa-grid}
+1. **Accountability:** Empirical proof of performance demonstrating ROI to stakeholders and regulators.
 
-::: {.qa-card}
-::: {.qa-title}
-1. Incorporate Monitoring Mindfully?
-:::
-::: {.qa-body}
-Enforce the **3% Sentinel Rule**, Mandate 3–5% budget allocation for automated continuous sensors (Temp, DO, $\text{NO}_3^-$, Turbidity) to provide design feedback on performance.
-:::
-:::
+2. **Early Risk Mitigation:** Identifies underperforming or failing interventions early so management can adapt.
 
-::: {.qa-card}
-::: {.qa-title}
-2. Investment Dollars Strategy?
-:::
-::: {.qa-body}
-Embrace **Intentional Ecosystem Design**: Invest in permanent functional levers (flow preservation, canopy shading, diversion retrofits) rather than passive channel structural fixes.
-:::
-:::
+3. **Shield Against Greenwashing:** Defends committee funding choices with open, real-time science-backed data.
 
-::: {.qa-card}
-::: {.qa-title}
-3. Prioritizing 5 Criteria?
-:::
-::: {.qa-body}
-Focus on **Water Flows & Aquatic Habitat via Diversion Retrofits**. Engineered fish passage & bypass flow structures between Munroe Canal & South Platte solve passage, thermal & habitat constraints together.
-:::
-:::
+---
 
-::: {.qa-card}
-::: {.qa-title}
-4. Best Projects for Flow Regime?
-:::
-::: {.qa-body}
-**Active Hydrograph Management**: Diversion consolidation, seasonal water-sharing leases, and automated bypass gates. Channel tweaks cannot replace missing summer water.
-:::
-:::
+## Direct Answers to Committee Questions (Part 1)
 
-::: {.qa-card}
-::: {.qa-title}
-5. Committee's Biggest Bang for Buck?
-:::
-::: {.qa-body}
-**Riparian Canopy Re-establishment & Diversion Bypass Retrofits**. Native willow/cottonwood shading yields guaranteed thermal drops (1–3°C) at a fraction of heavy equipment cost.
-:::
-:::
+- **1. Incorporate Monitoring Mindfully?**  
+  Enforce the **3% Sentinel Rule**. Mandate 3–5% budget allocation for automated continuous sensors ($\text{Temp, DO, NO}_3^-\text{, Turbidity}$) to provide design feedback on performance.
 
-::: {.qa-card}
-::: {.qa-title}
-6. Key Stakeholders to Engage?
-:::
-::: {.qa-body}
-**Ditch Companies & Open Hydroinformatics Groups**. Collaborate with irrigation ditch companies to manage designer flow regimes and open-data experts for real-time tracking.
-:::
-:::
+- **2. Investment Dollars Strategy?**  
+  Embrace **Intentional Ecosystem Design**: Invest in permanent functional levers (flow preservation, canopy shading, diversion retrofits) rather than passive channel structural fixes.
 
-:::
+- **3. Prioritizing 5 Criteria?**  
+  Focus on **Water Flows & Aquatic Habitat via Diversion Retrofits**. Engineered fish passage & bypass flow structures between Munroe Canal & South Platte solve passage, thermal & habitat constraints together.
+
+---
+
+## Direct Answers to Committee Questions (Part 2)
+
+- **4. Best Projects for Flow Regime?**  
+  **Active Hydrograph Management**: Diversion consolidation, seasonal water-sharing leases, and automated bypass gates. Channel tweaks cannot replace missing summer water.
+
+- **5. Committee's Biggest Bang for Buck?**  
+  **Riparian Canopy Re-establishment & Diversion Bypass Retrofits**. Native willow/cottonwood shading yields guaranteed thermal drops (1–3°C) at a fraction of heavy equipment cost.
+
+- **6. Key Stakeholders to Engage?**  
+  **Ditch Companies & Open Hydroinformatics Groups**. Collaborate with irrigation ditch companies to manage designer flow regimes and open-data experts for real-time tracking.
 
 ---
 
 ## Recommended Action Plan for Settlement Committee
 
-::: {.columns}
-::: {.column width="33%"}
+1. **Spatial Gap Analysis**  
+   Conduct an immediate spatial gap analysis overlaying proposed settlement restoration reaches against active sensor coverage along the Munroe-to-South-Platte corridor.
 
-::: {.ross-card style="text-align:center;"}
-[01]{style="font-size:2em; font-weight:800; color:#0369a1;"}
+2. **Monitoring Standard**  
+   Adopt the 3–5% Sentinel Rule in all future RFP guidelines to mandate continuous telemetry data and intentional design feedback (*Ross et al. 2015*).
 
-#### Spatial Gap Analysis
+3. **Open Data Dashboard**  
+   Establish an open-access public hydroinformatics dashboard connecting settlement projects to live river health metrics.
 
-Conduct an immediate spatial gap analysis overlaying proposed settlement restoration reaches against active sensor coverage along the Munroe-to-South-Platte corridor.
-:::
-
-:::
-
-::: {.column width="33%"}
-
-::: {.ross-card style="text-align:center;"}
-[02]{style="font-size:2em; font-weight:800; color:#059669;"}
-
-#### Monitoring Standard
-
-Adopt the 3–5% Sentinel Rule in all future RFP guidelines to mandate continuous telemetry data and intentional design feedback (*Ross et al. 2015*).
-:::
-
-:::
-
-::: {.column width="33%"}
-
-::: {.ross-card style="text-align:center;"}
-[03]{style="font-size:2em; font-weight:800; color:#d97706;"}
-
-#### Open Data Dashboard
-
-Establish an open-access public hydroinformatics dashboard connecting settlement projects to live river health metrics.
-:::
-
-:::
-:::
-
-::: {.callout-tip icon=false style="text-align:center; margin-top:20px;"}
+::: {.callout-tip icon=false style="margin-top: 24px;"}
 **Summary:** Protecting the Cache la Poudre River requires acknowledging human control, intentionally designing for flow, thermal shading, and connectivity—verified continuously with real-time empirical data.
 :::
