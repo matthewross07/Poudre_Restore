@@ -1,251 +1,212 @@
-/* Custom Styling for Poudre River Settlement RevealJS Presentation */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+/* ROSSyndicate-Inspired Clean Open Science Theme for RevealJS */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root {
-  --bg-dark: #0f172a;
-  --bg-card: rgba(30, 41, 59, 0.85);
-  --border-card: rgba(255, 255, 255, 0.1);
-  --accent-blue: #38bdf8;
-  --accent-teal: #14b8a6;
-  --accent-emerald: #10b981;
-  --accent-amber: #f59e0b;
-  --accent-rose: #f43f5e;
-  --text-main: #f8fafc;
-  --text-muted: #94a3b8;
+  --bg-main: #f8fafc;
+  --bg-card: #ffffff;
+  --border-card: #e2e8f0;
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --brand-teal: #0f766e;
+  --brand-sky: #0284c7;
+  --brand-navy: #1e3a8a;
+  --accent-emerald: #059669;
+  --accent-amber: #d97706;
+  --accent-rose: #e11d48;
 }
 
 .reveal {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   color: var(--text-main);
-  background-color: var(--bg-dark);
+  background-color: var(--bg-main);
 }
 
-.reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5 {
+.reveal .slides {
+  text-align: left;
+}
+
+/* Headings */
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 {
   font-family: 'Outfit', sans-serif;
   text-transform: none;
   letter-spacing: -0.02em;
-  color: #ffffff;
+  color: #0f172a;
 }
 
 .reveal h1 {
-  font-size: 2.3em;
+  font-size: 2.2em;
   font-weight: 800;
+  color: #0f766e;
   line-height: 1.15;
-  background: linear-gradient(135deg, #ffffff 0%, #38bdf8 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 .reveal h2 {
-  font-size: 1.6em;
+  font-size: 1.5em;
   font-weight: 700;
-  color: #38bdf8;
-  border-bottom: 2px solid rgba(56, 189, 248, 0.3);
+  color: #0369a1;
+  border-bottom: 3px solid #0284c7;
   padding-bottom: 8px;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .reveal h3 {
-  font-size: 1.25em;
+  font-size: 1.2em;
   font-weight: 600;
-  color: #f1f5f9;
+  color: #0f766e;
 }
 
-/* Glassmorphism Card Container */
-.glass-card {
-  background: var(--bg-card);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--border-card);
+/* Clean Cards */
+.ross-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
   border-radius: 12px;
   padding: 20px 24px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   margin-bottom: 16px;
 }
 
-/* Grid Layouts */
-.grid-2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
+.ross-card-header {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.1em;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #0f766e;
 }
 
-.grid-3 {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 16px;
+/* Evidence Badges */
+.badge {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 0.7em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
-.grid-6 {
+.badge-high {
+  background: #dcfce7;
+  color: #15803d;
+  border: 1px solid #86efac;
+}
+
+.badge-mod {
+  background: #e0f2fe;
+  color: #0369a1;
+  border: 1px solid #7dd3fc;
+}
+
+.badge-mixed {
+  background: #fef3c7;
+  color: #b45309;
+  border: 1px solid #fde047;
+}
+
+.badge-low {
+  background: #ffe4e6;
+  color: #be123c;
+  border: 1px solid #fda4af;
+}
+
+/* Tables */
+.matrix-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.6em;
+  margin-top: 10px;
+  background: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+  border: 1px solid #cbd5e1;
+}
+
+.matrix-table th {
+  background: #0f766e;
+  color: #ffffff;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  text-align: left;
+  padding: 10px 12px;
+}
+
+.matrix-table td {
+  padding: 8px 12px;
+  border-bottom: 1px solid #e2e8f0;
+  vertical-align: top;
+  color: #1e293b;
+  line-height: 1.35;
+}
+
+.matrix-table tr:nth-child(even) td {
+  background: #f8fafc;
+}
+
+.matrix-table tr:hover td {
+  background: #f1f5f9;
+}
+
+.citation {
+  font-size: 0.85em;
+  color: #64748b;
+  font-style: italic;
+}
+
+/* Callouts */
+.reveal .callout {
+  border-radius: 8px;
+  font-size: 0.8em;
+  margin: 14px 0;
+}
+
+/* Q&A Grid Cards */
+.qa-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 14px;
 }
 
-/* Badges for Evidence */
-.badge {
-  display: inline-block;
-  padding: 4px 10px;
-  border-radius: 20px;
-  font-size: 0.72em;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+.qa-card {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-left: 4px solid #0284c7;
+  border-radius: 8px;
+  padding: 14px 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
-.badge-high {
-  background: rgba(16, 185, 129, 0.2);
-  color: #34d399;
-  border: 1px solid rgba(16, 185, 129, 0.4);
-}
-
-.badge-mod {
-  background: rgba(56, 189, 248, 0.2);
-  color: #38bdf8;
-  border: 1px solid rgba(56, 189, 248, 0.4);
-}
-
-.badge-mixed {
-  background: rgba(245, 158, 11, 0.2);
-  color: #fbbf24;
-  border: 1px solid rgba(245, 158, 11, 0.4);
-}
-
-.badge-low {
-  background: rgba(244, 63, 94, 0.2);
-  color: #fb7185;
-  border: 1px solid rgba(244, 63, 94, 0.4);
-}
-
-/* Custom Table Styling */
-.matrix-table {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
-  font-size: 0.62em;
-  margin-top: 10px;
-  border-radius: 10px;
-  overflow: hidden;
-  border: 1px solid var(--border-card);
-}
-
-.matrix-table th {
-  background: #1e293b;
-  color: #38bdf8;
+.qa-title {
   font-family: 'Outfit', sans-serif;
+  font-size: 0.85em;
   font-weight: 700;
-  text-align: left;
-  padding: 10px 12px;
-  border-bottom: 2px solid rgba(56, 189, 248, 0.3);
+  color: #0369a1;
+  margin-bottom: 4px;
 }
 
-.matrix-table td {
-  padding: 10px 12px;
-  background: rgba(15, 23, 42, 0.7);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  vertical-align: top;
-  color: #e2e8f0;
+.qa-body {
+  font-size: 0.72em;
+  color: #334155;
   line-height: 1.4;
 }
 
-.matrix-table tr:hover td {
-  background: rgba(30, 41, 59, 0.9);
+/* Footer & Progress */
+.reveal .controls {
+  color: #0284c7;
 }
 
-.matrix-table ul {
-  margin: 0;
-  padding-left: 14px;
+.reveal .progress {
+  color: #0f766e;
+  height: 4px;
 }
 
-.matrix-table li {
-  margin-bottom: 3px;
-}
-
-/* Highlight boxes */
-.highlight-box {
-  border-left: 4px solid var(--accent-blue);
-  background: rgba(56, 189, 248, 0.08);
-  padding: 12px 18px;
-  border-radius: 0 8px 8px 0;
-  margin: 12px 0;
-  font-size: 0.85em;
-}
-
-.callout-warning {
-  border-left: 4px solid var(--accent-amber);
-  background: rgba(245, 158, 11, 0.08);
-  padding: 12px 18px;
-  border-radius: 0 8px 8px 0;
-  margin: 12px 0;
-  font-size: 0.85em;
-}
-
-.callout-success {
-  border-left: 4px solid var(--accent-emerald);
-  background: rgba(16, 185, 129, 0.08);
-  padding: 12px 18px;
-  border-radius: 0 8px 8px 0;
-  margin: 12px 0;
-  font-size: 0.85em;
-}
-
-/* Question Cards for Q&A Slide */
-.q-card {
-  background: rgba(30, 41, 59, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  padding: 12px 16px;
-  font-size: 0.72em;
-}
-
-.q-title {
-  color: #38bdf8;
-  font-weight: 700;
-  font-size: 1.05em;
-  margin-bottom: 6px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.q-answer {
-  color: #cbd5e1;
-  line-height: 1.45;
-}
-
-/* Map frame styling */
-.map-container {
-  width: 100%;
-  height: 480px;
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid var(--border-card);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-}
-
-.map-container iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-/* Citation text */
-.citation {
-  font-size: 0.82em;
-  color: #94a3b8;
-  font-style: italic;
-}
-
-/* Presenter Badge */
-.presenter-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(15, 23, 42, 0.8);
-  border: 1px solid var(--accent-blue);
-  padding: 6px 14px;
+.presenter-badge {
+  display: inline-block;
+  background: #f0fdf4;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+  padding: 4px 12px;
   border-radius: 20px;
-  font-size: 0.8em;
-  color: #38bdf8;
+  font-size: 0.75em;
   font-weight: 600;
 }

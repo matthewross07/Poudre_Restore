@@ -1,11 +1,11 @@
 ---
 title: "Empirical Aquatic Restoration"
 subtitle: "Prioritizing Evidence, Flows & Continuous Monitoring for the Cache la Poudre River Settlement"
-author: "Dr. Matthew Ross | Hydroinformatics & Aquatic Ecosystems"
+author: "Dr. Matthew Ross | Radical Open Science Syndicate (ROSS)"
 date: "July 24, 2026"
 format:
   revealjs:
-    theme: dark
+    theme: default
     css: custom.css
     width: 1280
     height: 720
@@ -13,78 +13,143 @@ format:
     controls: true
     progress: true
     slide-number: true
-    transition: slide
-    background-transition: fade
+    transition: fade
     embed-resources: true
 ---
 
-## High-Frequency Monitoring of the Poudre
+## High-Frequency Sensor Network: Poudre Reach
 
-<div class="grid-2">
-  <div class="glass-card">
-    <h3 style="color:#38bdf8; margin-top:0;">Empirical Baseline for Settlement Reach</h3>
-    <p style="font-size:0.8em; color:#cbd5e1; line-height:1.4;">
-      <strong>Target Reach:</strong> Cache la Poudre River from above the <em>Munroe Gravity Canal Diversion</em> down to the <em>South Platte River Confluence</em>.
-    </p>
-    <div class="highlight-box">
-      <strong>Core Thesis:</strong> Continuous high-frequency sensors provide the empirical diagnostic baseline needed to evaluate restoration performance <em>before a single dollar is spent</em>.
-    </div>
-    <ul style="font-size:0.75em; color:#94a3b8; line-height:1.4;">
-      <li>Real-time tracking of Water Temp, DO, Turbidity & NO3⁻</li>
-      <li>Direct accountability across urban & agricultural reaches</li>
-      <li>Empirical evaluation vs. visual assumptions</li>
-    </ul>
-    <div style="margin-top:15px;">
-      <span class="presenter-tag">Presenter: Dr. Matthew Ross</span>
-    </div>
-  </div>
+::: {.columns}
+::: {.column width="48%"}
 
-  <div class="map-container">
-    <iframe src="map.html" title="Poudre River Sensor Network Map"></iframe>
-  </div>
-</div>
+::: {.ross-card}
+### Diagnostic Baseline for Settlement Reach
+
+**Target Corridor:** Cache la Poudre River from above the *Munroe Gravity Canal Diversion* down to the *South Platte River Confluence*.
+
+::: {.callout-note icon=false}
+#### Core Thesis
+Continuous high-frequency sensors provide the empirical diagnostic baseline needed to evaluate restoration performance **before a single dollar is spent**.
+:::
+
+- **Parameters Tracked:** Water Temperature, Dissolved Oxygen, Turbidity, & Nitrate ($\text{NO}_3^-$)
+- **Accountability:** Unassailable data across urban & agricultural reaches
+- **Empirical Rigor:** Performance evaluated by downstream mass balance, not visual assumptions
+
+[Dr. Matthew Ross | ROSS Lab]{.presenter-badge}
+:::
+
+:::
+
+::: {.column width="52%"}
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-height: 5.5
+#| out-width: "100%"
+
+library(leaflet)
+
+stations <- data.frame(
+  id = 1:10,
+  name = c(
+    "Munroe Gravity Canal Diversion",
+    "Poudre Canyon Mouth (USGS 06752000)",
+    "Bellvue / Watson Lake Reach",
+    "Laporte Sentinel Site",
+    "Fort Collins Downtown (USGS 06752260)",
+    "Environmental Learning Center (ELC)",
+    "Timnath Reach",
+    "Windsor Reach (USGS 06752280)",
+    "Greeley O Street Bridge (USGS 06752400)",
+    "South Platte Confluence (USGS 06752500)"
+  ),
+  type = c("Boundary", "Sensor Station", "Sensor Station", "Sensor Station", "Sensor Station", 
+           "Sensor Station", "Sensor Station", "Sensor Station", "Sensor Station", "Outlet Boundary"),
+  lat = c(40.6970, 40.6912, 40.6300, 40.6270, 40.5885, 40.5530, 40.5280, 40.4780, 40.4420, 40.4180),
+  lng = c(-105.2150, -105.1950, -105.1720, -105.1400, -105.0690, -105.0120, -104.9750, -104.9120, -104.6780, -104.6020),
+  params = c("Diversion Intake", "Flow, Temp, Turbidity", "Temp, DO, Turbidity", "Temp, DO, NO3-", "Flow, Temp, DO, NO3-",
+             "Temp, DO, SpCond", "Temp, DO, NO3-", "Flow, Temp, DO, NO3-", "Flow, Temp, DO, NO3-", "Outlet Mass Balance")
+)
+
+getColor <- function(t) {
+  ifelse(grepl("Boundary", t), "#d97706", "#0284c7")
+}
+
+river_coords <- matrix(c(
+  -105.2150, 40.6970,
+  -105.1950, 40.6912,
+  -105.1720, 40.6300,
+  -105.1400, 40.6270,
+  -105.0690, 40.5885,
+  -105.0120, 40.5530,
+  -104.9750, 40.5280,
+  -104.9120, 40.4780,
+  -104.6780, 40.4420,
+  -104.6020, 40.4180
+), ncol = 2, byrow = TRUE)
+
+leaflet(stations) %>%
+  addTiles(urlTemplate = "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png") %>%
+  addPolylines(lng = river_coords[,1], lat = river_coords[,2], color = "#0284c7", weight = 5, opacity = 0.85) %>%
+  addCircleMarkers(
+    lng = ~lng, lat = ~lat,
+    radius = 8,
+    color = getColor(stations$type),
+    fillColor = getColor(stations$type),
+    fillOpacity = 0.9,
+    popup = paste0("<b>", stations$name, "</b><br/>", stations$params)
+  )
+```
+
+:::
+:::
 
 ---
 
-## The Core Principle: Restoration Without Monitoring is Greenwashing
+## Core Principle: Restoration Without Monitoring is Greenwashing
 
-<div class="grid-2">
-  <div class="glass-card">
-    <h3 style="color:#fb7185; margin-top:0;">The Unmonitored Pitfall</h3>
-    <ul style="font-size:0.78em; color:#cbd5e1; line-height:1.5;">
-      <li><strong>Millions Spent Annually:</strong> Instream structural fixes (BDAs, boulder clusters, Stage 0 reshapes) are widely deployed across snowmelt rivers.</li>
-      <li><strong>Flawed Success Metrics:</strong> Success is routinely measured by <em>inputs</em> ("dollars spent") and <em>outputs</em> ("feet of bank shaped on Day 1").</li>
-      <li><strong>5-Year Failure Rate:</strong> Without post-construction water quality monitoring, projects fail to demonstrate reach-scale ecological or water quality gains.</li>
-    </ul>
-    <div class="callout-warning">
-      <strong>Risk to Settlement Fund:</strong> Investing in unmonitored structural interventions risks high failure rates without verifiable downstream benefits.
-    </div>
-  </div>
+::: {.columns}
+::: {.column width="50%"}
 
-  <div class="glass-card">
-    <h3 style="color:#34d399; margin-top:0;">The Empirical Alternative</h3>
-    <ul style="font-size:0.78em; color:#cbd5e1; line-height:1.5;">
-      <li><strong>Continuous Sensor Arrays:</strong> Automated real-time sensors measuring Water Temperature, Dissolved Oxygen, Turbidity, and Nitrate.</li>
-      <li><strong>Why Grab Samples Fail:</strong> Sparse monthly grab samples miss &gt;90% of storm runoff events, pulse loads, and acute summer thermal spikes.</li>
-      <li><strong>Transparent Mass Balance:</strong> Converts subjective claims into hard, unassailable downstream data.</li>
-    </ul>
-    <div class="callout-success">
-      <strong>Guiding Principle:</strong> Continuous monitoring guarantees fiduciary accountability and protects committee capital.
-    </div>
-  </div>
-</div>
+::: {.callout-warning icon=false}
+### The Unmonitored Pitfall
+
+- **Millions Spent Annually:** Instream structural fixes (BDAs, boulder clusters, Stage 0 channel reshapes) are heavily promoted in gravel snowmelt rivers.
+- **Flawed Metrics:** Success is measured by *inputs* ("dollars spent") and *outputs* ("feet of bank shaped on Day 1").
+- **5-Year Performance Gap:** Without continuous monitoring, interventions fail to show downstream water quality or ecosystem gains.
+- **Settlement Risk:** Investing in unmonitored channel restructuring risks capital loss without verifiable reach-scale improvements.
+:::
+
+:::
+
+::: {.column width="50%"}
+
+::: {.callout-tip icon=false}
+### The Empirical Alternative
+
+- **Continuous Sensor Arrays:** Automated real-time sensors measuring Water Temperature, Dissolved Oxygen, Turbidity, and Nitrate.
+- **Why Grab Samples Fail:** Sparse monthly grab samples miss >90% of storm runoff events, pulse loads, and acute summer thermal stress.
+- **Transparent Mass Balance:** Converts subjective claims into hard, unassailable downstream data.
+- **Guiding Rule:** Continuous monitoring protects committee capital and guarantees fiduciary accountability.
+:::
+
+:::
+:::
 
 ---
 
-## Downstream Water Quality Impact Assessment Matrix
+## Downstream Water Quality Impact Matrix
 
 <table class="matrix-table">
   <thead>
     <tr>
       <th style="width: 18%;">Technique</th>
-      <th style="width: 22%;">Physical Mechanism</th>
+      <th style="width: 24%;">Physical Mechanism</th>
       <th style="width: 20%;">Downstream WQ Evidence</th>
-      <th style="width: 22%;">Long-Term Viability</th>
+      <th style="width: 20%;">Long-Term Viability</th>
       <th style="width: 18%;">Primary Citations</th>
     </tr>
   </thead>
@@ -92,7 +157,7 @@ format:
     <tr>
       <td><strong>Dam / Diversion Removal &amp; Retrofits</strong></td>
       <td>Restores longitudinal connectivity, natural sediment transport, &amp; thermal regime.</td>
-      <td><span class="badge badge-high">HIGH EVIDENCE</span><br/>Eliminates local temp spikes, re-oxygenates, resolves fine sediment accumulation.</td>
+      <td><span class="badge badge-high">HIGH EVIDENCE</span><br/>Eliminates local temp spikes, re-oxygenates, clears fine sediment.</td>
       <td>Permanent solution. Highest ROI per linear km.</td>
       <td class="citation">Bednarek (2001)<br/>Doyle et al. (2005)<br/>Bernhardt &amp; Palmer (2011)</td>
     </tr>
@@ -106,14 +171,14 @@ format:
     <tr>
       <td><strong>Floodplain &amp; Side-Channel Reconnection</strong></td>
       <td>Attenuates peak flood energy, drops TSS, expands hyporheic residence.</td>
-      <td><span class="badge badge-mod">MODERATE</span><br/>High TSS &amp; NO3⁻ settling during flood peaks; negligible during summer low baseflows.</td>
-      <td>High viability if high-flow flood regime remains intact.</td>
+      <td><span class="badge badge-mod">MODERATE</span><br/>High TSS &amp; NO3⁻ settling during flood peaks; negligible during baseflows.</td>
+      <td>High viability if high-flow flood hydrograph remains intact.</td>
       <td class="citation">Opperman et al. (2010)<br/>Noe et al. (2013)<br/>Kaushal et al. (2008)</td>
     </tr>
     <tr>
       <td><strong>In-Stream Reconfiguration (ELJs, Boulders)</strong></td>
       <td>Creates localized velocity refuge, scour pools, &amp; physical trout habitat.</td>
-      <td><span class="badge badge-low">LOW / NEGLIGIBLE</span><br/>High local physical habitat score; zero change to reach downstream nutrient/thermal loads.</td>
+      <td><span class="badge badge-low">LOW / NEGLIGIBLE</span><br/>High local physical habitat score; zero downstream nutrient/thermal impact.</td>
       <td>Vulnerable to destruction during 10-year snowmelt runoff events.</td>
       <td class="citation">Palmer et al. (2005, 2010)<br/>Bernhardt et al. (2005)<br/>Filoso &amp; Palmer (2011)</td>
     </tr>
@@ -128,109 +193,152 @@ format:
       <td><strong>Stage 0 / Process-Based Restoration</strong></td>
       <td>Spreads flow into unconfined multi-thread wetland complexes.</td>
       <td><span class="badge badge-low">UNPROVEN WQ</span><br/>High local habitat value in low-energy valley bottoms; unproven for downstream export.</td>
-      <td>Requires huge land footprint; prone to high evaporative loss.</td>
+      <td>Requires huge land footprint; high evaporative loss.</td>
       <td class="citation">Cluer &amp; Thorne (2014)<br/>Powers et al. (2019)<br/>Kondolf et al. (2006)</td>
     </tr>
   </tbody>
 </table>
 
-<div class="callout-success" style="font-size:0.72em; margin-top:8px; padding:8px 14px;">
-  <strong>Peer-Reviewed Takeaway:</strong> National reviews (Bernhardt et al. 2005; Palmer et al. 2010) show &gt;90% of in-stream structural restoration projects perform zero post-project monitoring. Structural channel reconfigurations create localized physical complexity, but <em>only thermal shading, barrier removal, and flow preservation alter downstream water quality mass balance</em>.
-</div>
+::: {.callout-note icon=false}
+**Peer-Reviewed Finding:** Comprehensive national reviews (*Bernhardt et al. 2005; Palmer et al. 2010*) reveal that over 90% of in-stream structural restoration projects perform zero post-project monitoring. Structural channel reconfigurations create local physical structure, but **only thermal shading, barrier removal, and flow preservation alter downstream water quality mass balance**.
+:::
 
 ---
 
-## Mindful Stewardship & Risk Mitigation for Settlement Dollars
+## Mindful Stewardship & Risk Mitigation ($100M Settlement)
 
-<div class="grid-2">
-  <div class="glass-card">
-    <h3 style="color:#38bdf8; margin-top:0;">The "3% Sentinel Rule"</h3>
-    <p style="font-size:0.78em; color:#cbd5e1; line-height:1.5;">
-      Institute a mandatory policy requiring every funded capital project to dedicate <strong>3% to 5% of its total budget</strong> to automated high-frequency sensor monitoring.
-    </p>
-    <ul style="font-size:0.75em; color:#94a3b8; line-height:1.45;">
-      <li><strong>Pre- &amp; Post-Implementation:</strong> Establish a 12-month pre-project baseline and 3-year post-project performance tracking.</li>
-      <li><strong>Continuous Telemetry:</strong> Automated stations deployed immediately upstream &amp; downstream of project boundaries.</li>
-      <li><strong>Beyond Grab Samples:</strong> Eliminates reliance on monthly manual samples that miss peak loading events.</li>
-    </ul>
-  </div>
+::: {.columns}
+::: {.column width="50%"}
 
-  <div class="glass-card">
-    <h3 style="color:#10b981; margin-top:0;">Why It Protects the Committee</h3>
-    <div style="font-size:0.78em; color:#cbd5e1; line-height:1.5;">
-      <p><strong>1. Unassailable Accountability:</strong> Generates empirical proof of success to demonstrate ROI to the public and regulators.</p>
-      <p><strong>2. Early Risk Detection:</strong> Identifies underperforming or failing structural interventions before capital is wasted.</p>
-      <p><strong>3. Shields Against Greenwashing:</strong> Defends committee funding decisions with open, continuous science-backed data.</p>
-    </div>
-  </div>
-</div>
+::: {.ross-card}
+### The "3% Sentinel Rule"
+
+Institute a mandatory policy requiring every funded capital project to dedicate **3% to 5% of its total budget** to automated continuous sensor monitoring.
+
+- **Pre- & Post-Implementation:** 12-month pre-project baseline and 3-year post-project continuous tracking.
+- **Continuous Telemetry:** Automated stations deployed immediately upstream & downstream of project reaches.
+- **Beyond Grab Samples:** Eliminates reliance on monthly grab samples that miss high-flow events and thermal spikes.
+:::
+
+:::
+
+::: {.column width="50%"}
+
+::: {.ross-card}
+### Fiduciary Protection for Committee
+
+1. **Unassailable Accountability:** Empirical proof of performance demonstrating ROI to stakeholders and regulators.
+2. **Early Risk Mitigation:** Identifies underperforming or failing structural interventions before capital is wasted.
+3. **Shield Against Greenwashing:** Defends committee funding choices with open, real-time science-backed data.
+:::
+
+:::
+:::
 
 ---
 
 ## Direct Answers to Committee Questions
 
-<div class="grid-6">
-  <div class="q-card">
-    <div class="q-title">1. Mindful Monitoring?</div>
-    <div class="q-answer">Enforce the <strong>"3% Sentinel Rule"</strong>. Require 3–5% budget allocation for automated continuous sensors (Temp, DO, NO3⁻, Turbidity) over sparse grab samples.</div>
-  </div>
+::: {.qa-grid}
 
-  <div class="q-card">
-    <div class="q-title">2. Investment Dollars Strategy?</div>
-    <div class="q-answer">Prioritize <strong>low-maintenance, permanent solutions</strong> (flow preservation, riparian canopy, diversion retrofits) over high-maintenance structural channel fixes.</div>
-  </div>
+::: {.qa-card}
+::: {.qa-title}
+1. Incorporate Monitoring Mindfully?
+:::
+::: {.qa-body}
+Enforce the **3% Sentinel Rule**. Mandate 3–5% budget allocation for automated continuous sensors (Temp, DO, $\text{NO}_3^-$, Turbidity) over sparse monthly grab samples.
+:::
+:::
 
-  <div class="q-card">
-    <div class="q-title">3. Prioritizing 5 Criteria?</div>
-    <div class="q-answer">Focus on <strong>Water Flows &amp; Aquatic Habitat via Barrier Removal</strong>. Eliminating diversion barriers between Munroe Canal &amp; South Platte solves passage, thermal &amp; habitat bottlenecks at once.</div>
-  </div>
+::: {.qa-card}
+::: {.qa-title}
+2. Investment Dollars Strategy?
+:::
+::: {.qa-body}
+Prioritize **low-maintenance, permanent returns** (flow preservation, canopy shading, diversion retrofits) over high-maintenance structural channel fixes.
+:::
+:::
 
-  <div class="q-card">
-    <div class="q-title">4. Best Projects for Flow Regime?</div>
-    <div class="q-answer"><strong>Diversion consolidation, seasonal water-sharing leases, and automated bypass gates</strong>. Physical channel tweaks cannot compensate for missing late-summer water.</div>
-  </div>
+::: {.qa-card}
+::: {.qa-title}
+3. Prioritizing 5 Criteria?
+:::
+::: {.qa-body}
+Focus on **Water Flows & Aquatic Habitat via Barrier Removal**. Eliminating diversion barriers between Munroe Canal & South Platte solves passage, thermal & habitat bottlenecks together.
+:::
+:::
 
-  <div class="q-card">
-    <div class="q-title">5. Committee's Biggest Bang for Buck?</div>
-    <div class="q-answer"><strong>Riparian Canopy Re-establishment &amp; Diversion Bypass Retrofits</strong>. Native willow/cottonwood shading yields guaranteed thermal drops (1–3°C) at a fraction of heavy equipment cost.</div>
-  </div>
+::: {.qa-card}
+::: {.qa-title}
+4. Best Projects for Flow Regime?
+:::
+::: {.qa-body}
+**Diversion consolidation, seasonal water-sharing leases, and automated bypass gates**. Physical channel tweaks cannot compensate for missing late-summer water.
+:::
+:::
 
-  <div class="q-card">
-    <div class="q-title">6. Key Stakeholders to Engage?</div>
-    <div class="q-answer"><strong>Ditch Companies &amp; Open Hydroinformatics Groups</strong>. Engage irrigation companies for diversion consolidation opportunities and open-data experts for transparent monitoring.</div>
-  </div>
-</div>
+::: {.qa-card}
+::: {.qa-title}
+5. Committee's Biggest Bang for Buck?
+:::
+::: {.qa-body}
+**Riparian Canopy Re-establishment & Diversion Bypass Retrofits**. Native willow/cottonwood shading yields guaranteed thermal drops (1–3°C) at a fraction of heavy equipment cost.
+:::
+:::
+
+::: {.qa-card}
+::: {.qa-title}
+6. Key Stakeholders to Engage?
+:::
+::: {.qa-body}
+**Ditch Companies & Open Hydroinformatics Groups**. Engage irrigation ditch companies (for flow consolidation opportunities) and independent open-data hydroinformatics teams.
+:::
+:::
+
+:::
 
 ---
 
-## Actionable Next Steps & Implementation Roadmap
+## Recommended Action Plan for Settlement Committee
 
-<div class="grid-3">
-  <div class="glass-card" style="text-align:center;">
-    <div style="font-size:2em; font-weight:800; color:#38bdf8; margin-bottom:8px;">01</div>
-    <h3 style="color:#ffffff; font-size:1em; margin-bottom:8px;">Spatial Gap Analysis</h3>
-    <p style="font-size:0.75em; color:#cbd5e1; line-height:1.4;">
-      Conduct a spatial gap analysis overlaying proposed settlement restoration reaches against active sensor stations along the Munroe-to-South-Platte corridor.
-    </p>
-  </div>
+::: {.columns}
+::: {.column width="33%"}
 
-  <div class="glass-card" style="text-align:center;">
-    <div style="font-size:2em; font-weight:800; color:#10b981; margin-bottom:8px;">02</div>
-    <h3 style="color:#ffffff; font-size:1em; margin-bottom:8px;">Institute Monitoring Standard</h3>
-    <p style="font-size:0.75em; color:#cbd5e1; line-height:1.4;">
-      Adopt the 3–5% Sentinel Rule in all future RFP and grant guidelines to mandate continuous pre- and post-construction telemetry data.
-    </p>
-  </div>
+::: {.ross-card style="text-align:center;"}
+[01]{style="font-size:2em; font-weight:800; color:#0369a1;"}
 
-  <div class="glass-card" style="text-align:center;">
-    <div style="font-size:2em; font-weight:800; color:#f59e0b; margin-bottom:8px;">03</div>
-    <h3 style="color:#ffffff; font-size:1em; margin-bottom:8px;">Open Real-Time Dashboard</h3>
-    <p style="font-size:0.75em; color:#cbd5e1; line-height:1.4;">
-      Establish an open-access public hydroinformatics dashboard connecting settlement projects to live river health metrics.
-    </p>
-  </div>
-</div>
+### Spatial Gap Analysis
 
-<div class="highlight-box" style="text-align:center; margin-top:20px; font-size:0.85em;">
-  <strong>Summary:</strong> Protecting the Cache la Poudre River requires prioritizing flow, thermal shading, and longitudinal connectivity—verified continuously with real-time empirical data.
-</div>
+Conduct an immediate spatial gap analysis overlaying proposed settlement restoration reaches against active sensor coverage along the Munroe-to-South-Platte corridor.
+:::
+
+:::
+
+::: {.column width="33%"}
+
+::: {.ross-card style="text-align:center;"}
+[02]{style="font-size:2em; font-weight:800; color:#059669;"}
+
+### Monitoring Standard
+
+Adopt the 3–5% Sentinel Rule in all future RFP and grant guidelines to mandate continuous pre- and post-construction telemetry data.
+:::
+
+:::
+
+::: {.column width="33%"}
+
+::: {.ross-card style="text-align:center;"}
+[03]{style="font-size:2em; font-weight:800; color:#d97706;"}
+
+### Open Data Dashboard
+
+Establish an open-access public hydroinformatics dashboard connecting settlement projects to live river health metrics.
+:::
+
+:::
+:::
+
+::: {.callout-tip icon=false style="text-align:center; margin-top:20px;"}
+**Summary:** Protecting the Cache la Poudre River requires prioritizing flow, thermal shading, and longitudinal connectivity—verified continuously with real-time empirical data.
+:::
