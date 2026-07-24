@@ -143,63 +143,72 @@ leaflet(stations) %>%
 
 ## Downstream Water Quality Impact Matrix
 
-<table class="matrix-table">
-  <thead>
-    <tr>
-      <th style="width: 18%;">Technique</th>
-      <th style="width: 24%;">Physical Mechanism</th>
-      <th style="width: 20%;">Downstream WQ Evidence</th>
-      <th style="width: 20%;">Long-Term Viability</th>
-      <th style="width: 18%;">Primary Citations</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>Dam / Diversion Removal &amp; Retrofits</strong></td>
-      <td>Restores longitudinal connectivity, natural sediment transport, &amp; thermal regime.</td>
-      <td><span class="badge badge-high">HIGH EVIDENCE</span><br/>Eliminates local temp spikes, re-oxygenates, clears fine sediment.</td>
-      <td>Permanent solution. Highest ROI per linear km.</td>
-      <td class="citation">Bednarek (2001)<br/>Doyle et al. (2005)<br/>Bernhardt &amp; Palmer (2011)</td>
-    </tr>
-    <tr>
-      <td><strong>Active Riparian Canopy (Willow/Cottonwood)</strong></td>
-      <td>Solar radiation shading, bank root cohesion, hyporheic nutrient uptake.</td>
-      <td><span class="badge badge-high">HIGH (THERMAL)</span><br/>Consistent 1–3°C drop in max summer water temps. Moderate NO3⁻ interception.</td>
-      <td>High durability once established; self-sustaining.</td>
-      <td class="citation">Poole &amp; Berman (2001)<br/>Caissie (2006)<br/>Kalny et al. (2017)</td>
-    </tr>
-    <tr>
-      <td><strong>Floodplain &amp; Side-Channel Reconnection</strong></td>
-      <td>Attenuates peak flood energy, drops TSS, expands hyporheic residence.</td>
-      <td><span class="badge badge-mod">MODERATE</span><br/>High TSS &amp; NO3⁻ settling during flood peaks; negligible during baseflows.</td>
-      <td>High viability if high-flow flood hydrograph remains intact.</td>
-      <td class="citation">Opperman et al. (2010)<br/>Noe et al. (2013)<br/>Kaushal et al. (2008)</td>
-    </tr>
-    <tr>
-      <td><strong>In-Stream Reconfiguration (ELJs, Boulders)</strong></td>
-      <td>Creates localized velocity refuge, scour pools, &amp; physical trout habitat.</td>
-      <td><span class="badge badge-low">LOW / NEGLIGIBLE</span><br/>High local physical habitat score; zero downstream nutrient/thermal impact.</td>
-      <td>Vulnerable to destruction during 10-year snowmelt runoff events.</td>
-      <td class="citation">Palmer et al. (2005, 2010)<br/>Bernhardt et al. (2005)<br/>Filoso &amp; Palmer (2011)</td>
-    </tr>
-    <tr>
-      <td><strong>Beaver Dam Analogues (BDAs)</strong></td>
-      <td>Aggrades channel, forces overbank flooding, elevates alluvial water table.</td>
-      <td><span class="badge badge-mixed">MIXED / CONDITIONAL</span><br/>Local TSS drop, but frequently spikes summer max temps (solar ponding) &amp; releases Ortho-P.</td>
-      <td>High failure rate in high-energy gravel rivers without real beavers.</td>
-      <td class="citation">Weber et al. (2017)<br/>Lautz et al. (2013)<br/>Majerova et al. (2015)</td>
-    </tr>
-    <tr>
-      <td><strong>Stage 0 / Process-Based Restoration</strong></td>
-      <td>Spreads flow into unconfined multi-thread wetland complexes.</td>
-      <td><span class="badge badge-low">UNPROVEN WQ</span><br/>High local habitat value in low-energy valley bottoms; unproven for downstream export.</td>
-      <td>Requires huge land footprint; high evaporative loss.</td>
-      <td class="citation">Cluer &amp; Thorne (2014)<br/>Powers et al. (2019)<br/>Kondolf et al. (2006)</td>
-    </tr>
-  </tbody>
-</table>
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
 
-::: {.callout-note icon=false}
+library(knitr)
+library(kableExtra)
+library(dplyr)
+
+matrix_data <- data.frame(
+  Technique = c(
+    "Dam / Diversion Removal & Retrofits",
+    "Active Riparian Canopy (Willow/Cottonwood)",
+    "Floodplain & Side-Channel Reconnection",
+    "In-Stream Reconfiguration (ELJs, Boulders)",
+    "Beaver Dam Analogues (BDAs)",
+    "Stage 0 / Process-Based Restoration"
+  ),
+  `Physical Mechanism` = c(
+    "Restores longitudinal connectivity, natural sediment transport, & thermal regime.",
+    "Solar radiation shading, bank root cohesion, hyporheic nutrient uptake.",
+    "Attenuates peak flood energy, drops TSS, expands hyporheic residence.",
+    "Creates localized velocity refuge, scour pools, & physical trout habitat.",
+    "Aggrades channel, forces overbank flooding, elevates alluvial water table.",
+    "Spreads flow into unconfined multi-thread wetland complexes."
+  ),
+  `Downstream WQ Evidence` = c(
+    "<span class='badge badge-high'>HIGH EVIDENCE</span><br/>Eliminates local temp spikes, re-oxygenates, clears fine sediment.",
+    "<span class='badge badge-high'>HIGH (THERMAL)</span><br/>Consistent 1–3°C drop in max summer water temps. Moderate NO3- interception.",
+    "<span class='badge badge-mod'>MODERATE</span><br/>High TSS & NO3- settling during flood peaks; negligible during baseflows.",
+    "<span class='badge badge-low'>LOW / NEGLIGIBLE</span><br/>High local physical habitat score; zero downstream nutrient/thermal impact.",
+    "<span class='badge badge-mixed'>MIXED / CONDITIONAL</span><br/>Local TSS drop, but frequently spikes summer max temps (solar ponding) & releases Ortho-P.",
+    "<span class='badge badge-low'>UNPROVEN WQ</span><br/>High local habitat value in low-energy valley bottoms; unproven for downstream export."
+  ),
+  `Long-Term Viability` = c(
+    "Permanent solution. Highest ROI per linear km.",
+    "High durability once established; self-sustaining.",
+    "High viability if high-flow flood hydrograph remains intact.",
+    "Vulnerable to destruction during 10-year snowmelt runoff events.",
+    "High failure rate in high-energy gravel rivers without real beavers.",
+    "Requires huge land footprint; high evaporative loss."
+  ),
+  `Primary Citations` = c(
+    "Bednarek (2001)<br/>Doyle et al. (2005)<br/>Bernhardt & Palmer (2011)",
+    "Poole & Berman (2001)<br/>Caissie (2006)<br/>Kalny et al. (2017)",
+    "Opperman et al. (2010)<br/>Noe et al. (2013)<br/>Kaushal et al. (2008)",
+    "Palmer et al. (2005, 2010)<br/>Bernhardt et al. (2005)<br/>Filoso & Palmer (2011)",
+    "Weber et al. (2017)<br/>Lautz et al. (2013)<br/>Majerova et al. (2015)",
+    "Cluer & Thorne (2014)<br/>Powers et al. (2019)<br/>Kondolf et al. (2006)"
+  ),
+  check.names = FALSE
+)
+
+matrix_data %>%
+  kable(format = "html", escape = FALSE, align = c("l", "l", "l", "l", "l")) %>%
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed"),
+    full_width = TRUE,
+    position = "center",
+    font_size = 13
+  ) %>%
+  row_spec(0, background = "#0f766e", color = "white", bold = TRUE) %>%
+  scroll_box(height = "410px", width = "100%")
+```
+
+::: {.callout-note icon=false style="margin-top: 10px;"}
 **Peer-Reviewed Finding:** Comprehensive national reviews (*Bernhardt et al. 2005; Palmer et al. 2010*) reveal that over 90% of in-stream structural restoration projects perform zero post-project monitoring. Structural channel reconfigurations create local physical structure, but **only thermal shading, barrier removal, and flow preservation alter downstream water quality mass balance**.
 :::
 
