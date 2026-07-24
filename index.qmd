@@ -11,105 +11,17 @@ format:
     height: 720
     margin: 0.06
     controls: true
+    controls-layout: bottom-right
     progress: true
     slide-number: true
+    keyboard: true
+    overview: true
+    touch: true
     transition: fade
     embed-resources: true
 ---
 
-## High-Frequency Sensor Network: Poudre Reach
-
-::: {.columns}
-::: {.column width="48%"}
-
-::: {.ross-card}
-### Diagnostic Baseline for Settlement Reach
-
-**Target Corridor:** Cache la Poudre River from above the *Munroe Gravity Canal Diversion* down to the *South Platte River Confluence*.
-
-::: {.callout-note icon=false}
-#### Core Thesis
-Continuous high-frequency sensors provide the empirical diagnostic baseline needed to evaluate restoration performance **before a single dollar is spent**.
-:::
-
-- **Parameters Tracked:** Water Temperature, Dissolved Oxygen, Turbidity, & Nitrate ($\text{NO}_3^-$)
-- **Accountability:** Unassailable data across urban & agricultural reaches
-- **Empirical Rigor:** Performance evaluated by downstream mass balance, not visual assumptions
-
-[Dr. Matthew Ross | ROSS Lab]{.presenter-badge}
-:::
-
-:::
-
-::: {.column width="52%"}
-
-```{r}
-#| echo: false
-#| message: false
-#| warning: false
-#| fig-height: 5.5
-#| out-width: "100%"
-
-library(leaflet)
-
-stations <- data.frame(
-  id = 1:10,
-  name = c(
-    "Munroe Gravity Canal Diversion",
-    "Poudre Canyon Mouth (USGS 06752000)",
-    "Bellvue / Watson Lake Reach",
-    "Laporte Sentinel Site",
-    "Fort Collins Downtown (USGS 06752260)",
-    "Environmental Learning Center (ELC)",
-    "Timnath Reach",
-    "Windsor Reach (USGS 06752280)",
-    "Greeley O Street Bridge (USGS 06752400)",
-    "South Platte Confluence (USGS 06752500)"
-  ),
-  type = c("Boundary", "Sensor Station", "Sensor Station", "Sensor Station", "Sensor Station", 
-           "Sensor Station", "Sensor Station", "Sensor Station", "Sensor Station", "Outlet Boundary"),
-  lat = c(40.6970, 40.6912, 40.6300, 40.6270, 40.5885, 40.5530, 40.5280, 40.4780, 40.4420, 40.4180),
-  lng = c(-105.2150, -105.1950, -105.1720, -105.1400, -105.0690, -105.0120, -104.9750, -104.9120, -104.6780, -104.6020),
-  params = c("Diversion Intake", "Flow, Temp, Turbidity", "Temp, DO, Turbidity", "Temp, DO, NO3-", "Flow, Temp, DO, NO3-",
-             "Temp, DO, SpCond", "Temp, DO, NO3-", "Flow, Temp, DO, NO3-", "Flow, Temp, DO, NO3-", "Outlet Mass Balance")
-)
-
-getColor <- function(t) {
-  ifelse(grepl("Boundary", t), "#d97706", "#0284c7")
-}
-
-river_coords <- matrix(c(
-  -105.2150, 40.6970,
-  -105.1950, 40.6912,
-  -105.1720, 40.6300,
-  -105.1400, 40.6270,
-  -105.0690, 40.5885,
-  -105.0120, 40.5530,
-  -104.9750, 40.5280,
-  -104.9120, 40.4780,
-  -104.6780, 40.4420,
-  -104.6020, 40.4180
-), ncol = 2, byrow = TRUE)
-
-leaflet(stations) %>%
-  addTiles(urlTemplate = "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png") %>%
-  addPolylines(lng = river_coords[,1], lat = river_coords[,2], color = "#0284c7", weight = 5, opacity = 0.85) %>%
-  addCircleMarkers(
-    lng = ~lng, lat = ~lat,
-    radius = 8,
-    color = getColor(stations$type),
-    fillColor = getColor(stations$type),
-    fillOpacity = 0.9,
-    popup = paste0("<b>", stations$name, "</b><br/>", stations$params)
-  )
-```
-
-:::
-:::
-
----
-
-## Core Principle: Restoration Without Monitoring is Greenwashing
+## Restoration Without Monitoring is Greenwashing
 
 ::: {.columns}
 ::: {.column width="50%"}
@@ -117,10 +29,10 @@ leaflet(stations) %>%
 ::: {.callout-warning icon=false}
 ### The Unmonitored Pitfall
 
-- **Millions Spent Annually:** Instream structural fixes (BDAs, boulder clusters, Stage 0 channel reshapes) are heavily promoted in gravel snowmelt rivers.
-- **Flawed Metrics:** Success is measured by *inputs* ("dollars spent") and *outputs* ("feet of bank shaped on Day 1").
-- **5-Year Performance Gap:** Without continuous monitoring, interventions fail to show downstream water quality or ecosystem gains.
-- **Settlement Risk:** Investing in unmonitored channel restructuring risks capital loss without verifiable reach-scale improvements.
+- **Millions Spent Annually:** Instream structural fixes (BDAs, boulder clusters, Stage 0 channel reshapes) are widely promoted across snowmelt gravel rivers.
+- **Flawed Metrics:** Success is routinely measured by *inputs* ("dollars spent") and *outputs* ("feet of bank shaped on Day 1").
+- **5-Year Performance Gap:** Without continuous monitoring, interventions fail to show reach-scale water quality or ecosystem gains.
+- **Settlement Risk:** Investing in unmonitored structural reconfigurations risks capital loss without verifiable downstream benefits.
 :::
 
 :::
@@ -130,7 +42,7 @@ leaflet(stations) %>%
 ::: {.callout-tip icon=false}
 ### The Empirical Alternative
 
-- **Continuous Sensor Arrays:** Automated real-time sensors measuring Water Temperature, Dissolved Oxygen, Turbidity, and Nitrate.
+- **Continuous Sensor Arrays:** Automated real-time sensors measuring Water Temperature, Dissolved Oxygen, Turbidity, and Nitrate ($\text{NO}_3^-$).
 - **Why Grab Samples Fail:** Sparse monthly grab samples miss >90% of storm runoff events, pulse loads, and acute summer thermal stress.
 - **Transparent Mass Balance:** Converts subjective claims into hard, unassailable downstream data.
 - **Guiding Rule:** Continuous monitoring protects committee capital and guarantees fiduciary accountability.
@@ -141,7 +53,7 @@ leaflet(stations) %>%
 
 ---
 
-## Downstream Water Quality Impact Matrix
+## What Works vs. What Doesn't: Evidence Matrix
 
 ```{r}
 #| echo: false
@@ -205,7 +117,7 @@ matrix_data %>%
     font_size = 13
   ) %>%
   row_spec(0, background = "#0f766e", color = "white", bold = TRUE) %>%
-  scroll_box(height = "410px", width = "100%")
+  scroll_box(height = "420px", width = "100%")
 ```
 
 ::: {.callout-note icon=false style="margin-top: 10px;"}
