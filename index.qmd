@@ -29,9 +29,9 @@ format:
 ::: {.callout-warning icon=false}
 ### The Unmonitored Pitfall
 
-- **Millions Spent Annually:** Instream structural fixes (BDAs, boulder clusters, Stage 0 channel reshapes) are widely promoted across snowmelt gravel rivers.
+- **Millions Spent Annually:** Instream structural fixes (BDAs, boulder clusters, Stage 0 channel reshapes) are heavily promoted across snowmelt gravel rivers.
 - **Flawed Metrics:** Success is routinely measured by *inputs* ("dollars spent") and *outputs* ("feet of bank shaped on Day 1").
-- **5-Year Performance Gap:** Without continuous monitoring, interventions fail to show reach-scale water quality or ecosystem gains.
+- **5-Year Performance Gap:** Without continuous monitoring, structural interventions fail to demonstrate reach-scale water quality or ecosystem gains.
 - **Settlement Risk:** Investing in unmonitored structural reconfigurations risks capital loss without verifiable downstream benefits.
 :::
 
@@ -40,12 +40,12 @@ format:
 ::: {.column width="50%"}
 
 ::: {.callout-tip icon=false}
-### The Empirical Alternative
+### The Empirical & Design Alternative
 
+- **Design Failures vs Science Failures:** "Many failures in applied ecology and restoration are design failures, not failures in science" (*Ross et al. 2015, Ann. Rev. Environ. Resour.*).
 - **Continuous Sensor Arrays:** Automated real-time sensors measuring Water Temperature, Dissolved Oxygen, Turbidity, and Nitrate ($\text{NO}_3^-$).
-- **Why Grab Samples Fail:** Sparse monthly grab samples miss >90% of storm runoff events, pulse loads, and acute summer thermal stress.
-- **Transparent Mass Balance:** Converts subjective claims into hard, unassailable downstream data.
-- **Guiding Rule:** Continuous monitoring protects committee capital and guarantees fiduciary accountability.
+- **Iterative Feedback Loops:** Continuous monitoring provides the design feedback required to verify real ecosystem performance.
+- **Guiding Rule:** Continuous empirical data shields committee capital from greenwashing.
 :::
 
 :::
@@ -117,12 +117,9 @@ matrix_data %>%
     font_size = 13
   ) %>%
   row_spec(0, background = "#0f766e", color = "white", bold = TRUE) %>%
-  scroll_box(height = "420px", width = "100%")
+  scroll_box(height = "410px", width = "100%")
 ```
 
-::: {.callout-note icon=false style="margin-top: 10px;"}
-**Peer-Reviewed Finding:** Comprehensive national reviews (*Bernhardt et al. 2005; Palmer et al. 2010*) reveal that over 90% of in-stream structural restoration projects perform zero post-project monitoring. Structural channel reconfigurations create local physical structure, but **only thermal shading, barrier removal, and flow preservation alter downstream water quality mass balance**.
-:::
 
 ---
 
@@ -136,9 +133,10 @@ matrix_data %>%
 
 Institute a mandatory policy requiring every funded capital project to dedicate **3% to 5% of its total budget** to automated continuous sensor monitoring.
 
+- **Design Feedback Loop:** Implements the iterative ecological design framework outlined in *Ross et al. (2015)* to evaluate functional outcomes.
 - **Pre- & Post-Implementation:** 12-month pre-project baseline and 3-year post-project continuous tracking.
 - **Continuous Telemetry:** Automated stations deployed immediately upstream & downstream of project reaches.
-- **Beyond Grab Samples:** Eliminates reliance on monthly grab samples that miss high-flow events and thermal spikes.
+- **Beyond Grab Samples:** Eliminates reliance on monthly grab samples that miss peak loading events.
 :::
 
 :::
@@ -167,7 +165,7 @@ Institute a mandatory policy requiring every funded capital project to dedicate 
 1. Incorporate Monitoring Mindfully?
 :::
 ::: {.qa-body}
-Enforce the **3% Sentinel Rule**. Mandate 3–5% budget allocation for automated continuous sensors (Temp, DO, $\text{NO}_3^-$, Turbidity) over sparse monthly grab samples.
+Enforce the **3% Sentinel Rule** (*Ross et al. 2015*). Mandate 3–5% budget allocation for automated continuous sensors (Temp, DO, $\text{NO}_3^-$, Turbidity) over sparse monthly grab samples.
 :::
 :::
 
@@ -242,7 +240,7 @@ Conduct an immediate spatial gap analysis overlaying proposed settlement restora
 
 ### Monitoring Standard
 
-Adopt the 3–5% Sentinel Rule in all future RFP and grant guidelines to mandate continuous pre- and post-construction telemetry data.
+Adopt the 3–5% Sentinel Rule in all future RFP and grant guidelines to mandate continuous pre- and post-construction telemetry data (*Ross et al. 2015*).
 :::
 
 :::
