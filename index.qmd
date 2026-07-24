@@ -1,6 +1,5 @@
 ---
-title: "Empirical Aquatic Restoration"
-subtitle: "Prioritizing Evidence, Flows & Continuous Monitoring for the Cache la Poudre River Settlement"
+title: "Don't restore the Cache La Poudre, Design It"
 author: "Dr. Matthew Ross | Radical Open Science Syndicate (ROSS)"
 date: "July 24, 2026"
 format:
@@ -21,17 +20,31 @@ format:
     embed-resources: true
 ---
 
+## My Biases
+
+- We (my lab) have built and run a ~ million dollar (100k per year) monitoring system in Poudre
+
+- I've built part of my career critiquing aquatic restoration practices
+
+- I recently started a company predicated on the idea that AI/ML techniques + monitoring can help us better manage freshwater resources
+
+- I live by the CLP and go there nearly every day
+
+
 ## From Passive "Restoration" to Intentional Ecosystem Design
 
 ::: {.columns}
 ::: {.column width="50%"}
 
 ::: {.callout-warning icon=false}
+
 ### The Passive "Restoration" Pitfall
 
-- **The Myth of Self-Assembly:** Traditional stream restoration assumes dropping in structural channel tweaks (BDAs, boulder clusters, Stage 0) will magically cause the river to "restore itself."
+- **The Myth of Self-Assembly:** Traditional stream restoration assumes dropping in structural channel tweaks (BDAs, boulder clusters, Stage 0) will  cause the river to "restore itself."
+
 - **Flawed Metrics:** Success is measured by *inputs* ("dollars spent") and *outputs* ("feet of bank shaped on Day 1") rather than functional performance.
-- **Unmonitored Greenwashing:** In a heavily managed snowmelt river, unmonitored structural fixes fail to deliver downstream thermal or water quality gains.
+
+- **Risk of Greenwashing:** Unmonitored structural fixes fail to deliver downstream thermal or water quality gains.
 :::
 
 :::
@@ -42,8 +55,10 @@ format:
 ### The Designer Ecosystem Approach
 
 - **Acknowledge Human Control:** "We must embrace *Designer Ecosystems*—admitting that humans control these systems and explicitly designing them for specific ecological goals, rather than hoping passive restoration fixes itself" (*Ross et al. 2015, Ann. Rev. Environ. Resour.*).
-- **Target Real Levers:** Direct investment toward explicit functional outcomes: flow preservation, riparian shading, and diversion connectivity.
-- **Continuous Sensor Arrays:** Real-time sensor monitoring ($\text{Temp, DO, Turbidity, NO}_3^-$) provides unassailable design feedback.
+
+- **Target Real Levers:** Direct investment toward explicit functional outcomes: flow preservation, riparian shading, and minimizing diversion harm.
+
+- **Continuous Sensor Arrays:** Real-time sensor monitoring ($\text{Temp, DO, Turbidity, Chl-a}$) provides  design feedback.
 :::
 
 :::
@@ -118,9 +133,17 @@ matrix_data %>%
   scroll_box(height = "410px", width = "100%")
 ```
 
-::: {.callout-note icon=false style="margin-top: 10px;"}
-**Ecosystem Design Principle:** Rather than assuming passive channel form will fix itself, intentional ecosystem design targets direct physical levers (flow preservation, thermal shading, barrier retrofits) with continuous monitoring feedback (*Ross et al. 2015, Ann. Rev. Environ. Resour.*).
-:::
+---
+
+## Let's design instead of restore
+
+- Places like the Poudre are already fully controlled by human decisions
+
+- Interventions should be moderate, monitored, and iterated based on success
+
+- Design goals, empirical outcoomes, must be stated before restoration and ROI 
+empirically measured/modelled (*Ross et al. 2015, Ann. Rev. Environ. Resour.*).
+
 
 ---
 
@@ -130,14 +153,18 @@ matrix_data %>%
 ::: {.column width="50%"}
 
 ::: {.ross-card}
-### The "3% Sentinel Rule"
 
-Institute a mandatory policy requiring every funded capital project to dedicate **3% to 5% of its total budget** to automated continuous sensor monitoring.
+#### Unique Things Possible here
 
-- **Design Feedback Loop:** Operationalizes the *Designer Ecosystems* framework (*Ross et al. 2015*) by measuring explicit performance goals.
+
+- **Design Feedback Loop:** Operationalizes the *Designer Ecosystems* framework by measuring explicit performance goals. Tie money to emprical evidence of project success
+
 - **Pre- & Post-Implementation:** 12-month pre-project baseline and 3-year post-project continuous tracking.
-- **Continuous Telemetry:** Automated stations deployed upstream & downstream of project reaches.
+
 - **Beyond Grab Samples:** Replaces monthly manual grab samples that miss 90%+ of runoff and thermal events.
+
+- **Real Restoration** Build a strong evidence-based bank of studies/interventions that demonstrate ROI for restoration projects nationwide. 
+
 :::
 
 :::
@@ -145,9 +172,9 @@ Institute a mandatory policy requiring every funded capital project to dedicate 
 ::: {.column width="50%"}
 
 ::: {.ross-card}
-### Fiduciary Protection for Committee
+#### Values for CLP community
 
-1. **Unassailable Accountability:** Empirical proof of performance demonstrating ROI to stakeholders and regulators.
+1. **Accountability:** Empirical proof of performance demonstrating ROI to stakeholders and regulators.
 2. **Early Risk Mitigation:** Identifies underperforming or failing interventions early so management can adapt.
 3. **Shield Against Greenwashing:** Defends committee funding choices with open, real-time science-backed data.
 :::
@@ -166,7 +193,7 @@ Institute a mandatory policy requiring every funded capital project to dedicate 
 1. Incorporate Monitoring Mindfully?
 :::
 ::: {.qa-body}
-Enforce the **3% Sentinel Rule** (*Ross et al. 2015*). Mandate 3–5% budget allocation for automated continuous sensors (Temp, DO, $\text{NO}_3^-$, Turbidity) to provide design feedback on performance.
+Enforce the **3% Sentinel Rule**, Mandate 3–5% budget allocation for automated continuous sensors (Temp, DO, $\text{NO}_3^-$, Turbidity) to provide design feedback on performance.
 :::
 :::
 
@@ -227,7 +254,7 @@ Focus on **Water Flows & Aquatic Habitat via Diversion Retrofits**. Engineered f
 ::: {.ross-card style="text-align:center;"}
 [01]{style="font-size:2em; font-weight:800; color:#0369a1;"}
 
-### Spatial Gap Analysis
+#### Spatial Gap Analysis
 
 Conduct an immediate spatial gap analysis overlaying proposed settlement restoration reaches against active sensor coverage along the Munroe-to-South-Platte corridor.
 :::
@@ -239,7 +266,7 @@ Conduct an immediate spatial gap analysis overlaying proposed settlement restora
 ::: {.ross-card style="text-align:center;"}
 [02]{style="font-size:2em; font-weight:800; color:#059669;"}
 
-### Monitoring Standard
+#### Monitoring Standard
 
 Adopt the 3–5% Sentinel Rule in all future RFP guidelines to mandate continuous telemetry data and intentional design feedback (*Ross et al. 2015*).
 :::
@@ -251,7 +278,7 @@ Adopt the 3–5% Sentinel Rule in all future RFP guidelines to mandate continuou
 ::: {.ross-card style="text-align:center;"}
 [03]{style="font-size:2em; font-weight:800; color:#d97706;"}
 
-### Open Data Dashboard
+#### Open Data Dashboard
 
 Establish an open-access public hydroinformatics dashboard connecting settlement projects to live river health metrics.
 :::
